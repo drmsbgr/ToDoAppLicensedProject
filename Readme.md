@@ -2,7 +2,7 @@
 
 ## Amaç
 
-Bir uygulamayı lisanslayabilmek ve kurulum dosyası haline getirip dağıtabilmek.
+Bir masaüstü uygulamasına lisans kontrolü ekleyerek kullanımı kısıtlamak ve bu uygulamayı bir kurulum dosyası haline getirip kullanıcıların kolayca yükleyip çalıştırabileceği şekilde dağıtmak.
 
 ## İçerik
 
