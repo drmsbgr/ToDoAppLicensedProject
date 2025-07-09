@@ -60,9 +60,7 @@ public static class LicenseManager
             string macAddress = GetWmiProperty("Win32_NetworkAdapterConfiguration", "MACAddress", "IPEnabled");
 
             string combined = $"{cpuId}|{biosSerial}|{diskSerial}|{macAddress}";
-
-            using SHA256 sha = SHA256.Create();
-            byte[] hash = sha.ComputeHash(Encoding.UTF8.GetBytes(combined));
+            byte[] hash = SHA256.HashData(Encoding.UTF8.GetBytes(combined));
             return Convert.ToBase64String(hash);
         }
         catch
