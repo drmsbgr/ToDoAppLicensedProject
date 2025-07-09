@@ -1,0 +1,6 @@
+@LicenseAPI_HostAddress = http://localhost:5243
+
+GET {{LicenseAPI_HostAddress}}/api/createlic
+Accept: application/json
+
+###
