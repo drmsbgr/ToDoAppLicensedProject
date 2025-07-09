@@ -9,8 +9,8 @@ namespace ToDoApp.Helpers
     {
         private const string JOBS_PATH = "jobs.dat";
 
-        private static byte[] Key = Encoding.UTF8.GetBytes("12345678901234567890123456789012");
-        private static byte[] IV = Encoding.UTF8.GetBytes("1234567890123456");
+        private static readonly byte[] Key = Encoding.UTF8.GetBytes("12345678901234567890123456789012");
+        private static readonly byte[] IV = Encoding.UTF8.GetBytes("1234567890123456");
 
         private static readonly JsonSerializerOptions Options = new()
         {
@@ -92,7 +92,7 @@ namespace ToDoApp.Helpers
             File.WriteAllBytes(JOBS_PATH, encrypted);
         }
 
-        public static List<Job> LoadEncryptedJson()
+        private static List<Job> LoadEncryptedJson()
         {
             byte[] encrypted = File.ReadAllBytes(JOBS_PATH);
 

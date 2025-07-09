@@ -22,7 +22,7 @@ namespace ToDoApp
             }
             else
             {
-                var (isActivated, message) = await LicenseManager.TryActivateLicense(keyTextBox.Text);
+                var (isActivated, message) = await LicenseManager.TryActivateLicenseAsync(keyTextBox.Text);
                 if (!isActivated)
                 {
                     MessageBox.Show(message, "Uyarı!", MessageBoxButtons.OK, MessageBoxIcon.Warning);

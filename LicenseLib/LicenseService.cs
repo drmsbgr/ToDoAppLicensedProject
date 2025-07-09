@@ -1,6 +1,6 @@
 ﻿namespace LicenseLib;
 
-public class LicenseService
+public static class LicenseService
 {
     private static readonly HttpClient httpClient = new();
     private const string URL = "http://localhost:5243/api";

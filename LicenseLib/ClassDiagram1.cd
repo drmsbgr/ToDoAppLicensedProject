@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LicenseLib.LicenseManager">
+    <Position X="2.75" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQAAAIAAAIABAAC0CAAAAAAAAAAAggAABAEAAAAAAAA=</HashCode>
+      <FileName>LicenseManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LicenseLib.LicenseService">
+    <Position X="5.5" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAIAACAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>LicenseService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

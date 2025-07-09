@@ -7,7 +7,7 @@ public static class LicenseManager
 {
     private const string LicenseFileName = "license.lic";
     private const string EncryptionKey = "TODOLICENSENCRYP"; // 16 karakter (AES)
-    private const string SecretKey = "todolistappverysecretKEY!"; // 16 karakter (AES)
+    private const string SecretKey = "todolistappverysecretKEY!";
 
     public static bool IsActivated => IsLicenseValid();
 
@@ -32,7 +32,7 @@ public static class LicenseManager
         }
     }
 
-    public static async Task<(bool, string)> TryActivateLicense(string licenseKey)
+    public static async Task<(bool, string)> TryActivateLicenseAsync(string licenseKey)
     {
         if (!IsLicenseKeyValid(licenseKey))
             return (false, "Lisans anahtarı geçersiz!");
@@ -51,7 +51,7 @@ public static class LicenseManager
 
     public static string GetMachineId()
     {
-        // Örnek: sadece volume serial number kullanılıyor
+        // Sadece volume serial number kullanılıyor
         var drive = DriveInfo.GetDrives()[0];
         string volumeSerial = drive.VolumeLabel + drive.Name;
         return ComputeSHA256(volumeSerial);

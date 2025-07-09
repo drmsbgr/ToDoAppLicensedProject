@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ToDoApp.Entities.Job">
+    <Position X="3.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACACAAAAAAAEAAAAAAAAAEAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Entities\Job.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToDoApp.Helpers.JobManager">
+    <Position X="5.25" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAQAAAQEAAAAAAAABAAAQAgAAABBAEA=</HashCode>
+      <FileName>Helpers\JobManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
