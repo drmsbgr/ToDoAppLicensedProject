@@ -1,5 +1,6 @@
 using System.Security.Cryptography;
 using System.Text;
+using System.Management;
 
 namespace LicenseLib;
 
@@ -51,10 +52,36 @@ public static class LicenseManager
 
     public static string GetMachineId()
     {
-        // Sadece volume serial number kullanılıyor
-        var drive = DriveInfo.GetDrives()[0];
-        string volumeSerial = drive.VolumeLabel + drive.Name;
-        return ComputeSHA256(volumeSerial);
+        try
+        {
+            string cpuId = GetWmiProperty("Win32_Processor", "ProcessorId");
+            string biosSerial = GetWmiProperty("Win32_BIOS", "SerialNumber");
+            string diskSerial = GetWmiProperty("Win32_DiskDrive", "SerialNumber");
+            string macAddress = GetWmiProperty("Win32_NetworkAdapterConfiguration", "MACAddress", "IPEnabled");
+
+            string combined = $"{cpuId}|{biosSerial}|{diskSerial}|{macAddress}";
+
+            using SHA256 sha = SHA256.Create();
+            byte[] hash = sha.ComputeHash(Encoding.UTF8.GetBytes(combined));
+            return Convert.ToBase64String(hash);
+        }
+        catch
+        {
+            return Guid.NewGuid().ToString(); // Fail-safe fallback
+        }
+    }
+
+    private static string GetWmiProperty(string className, string propertyName, string? conditionProperty = null)
+    {
+        using ManagementClass mc = new(className);
+        foreach (ManagementObject mo in mc.GetInstances().Cast<ManagementObject>())
+        {
+            if (conditionProperty != null && !(bool)(mo[conditionProperty] ?? false))
+                continue;
+
+            return mo[propertyName]?.ToString() ?? "";
+        }
+        return "";
     }
 
     public static bool IsLicenseKeyValid(string key)

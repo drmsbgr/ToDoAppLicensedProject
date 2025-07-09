@@ -58,4 +58,6 @@ app.MapGet("api/validatelic", (string machineId, string key, RepositoryContext c
 })
 .WithName("Validate License");
 
+Console.WriteLine(LicenseManager.GetMachineId());
+
 app.Run();
