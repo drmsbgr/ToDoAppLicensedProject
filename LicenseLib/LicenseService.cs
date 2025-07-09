@@ -15,13 +15,9 @@ public class LicenseService
             var message = await response.Content.ReadAsStringAsync();
 
             if (response.IsSuccessStatusCode)
-            {
                 return (message, true);
-            }
             else
-            {
                 return (message, false);
-            }
         }
         catch (Exception ex)
         {

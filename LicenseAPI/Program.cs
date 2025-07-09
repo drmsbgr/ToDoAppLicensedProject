@@ -11,7 +11,6 @@ builder.Services.AddDbContext<RepositoryContext>(o =>
     o.UseSqlite("Data Source = license.db");
 });
 
-
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -21,8 +20,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-//KPcJ15cwBY4qRhUY40Em2hjO2gdynnkskvfKElHnML8=
 
 app.MapGet("api/createlic", (string machineId, RepositoryContext context) =>
 {
@@ -59,6 +56,6 @@ app.MapGet("api/validatelic", (string machineId, string key, RepositoryContext c
     context.SaveChanges();
     return Results.Ok();
 })
-.WithName("Validate License").WithDescription("Validate License");
+.WithName("Validate License");
 
 app.Run();
