@@ -6,27 +6,22 @@ Bir uygulamayı lisanslayabilmek ve kurulum dosyası haline getirip dağıtabilm
 
 ## İçerik
 
-- License API
-- License Library
-- ToDoList App
-- Setup Project
+- ### License API
 
-### License API
+  - Makine ID'sine göre lisans anahtarı oluşturur.
+  - Gönderilen lisans anahtarını doğrular ve veritabanına kaydeder.
 
-- Makine ID'sine göre lisans anahtarı oluşturur.
-- Gönderilen lisans anahtarını doğrular ve veritabanına kaydeder.
+- ### License Library
 
-### License Library
+  - Lisans anahtarı oluşturma ve lisanslama işlemlerini gerçekleştirir.
+  - API ile haberleşen **License Service** içerir.
 
-- Lisans anahtarı oluşturma ve lisanslama işlemlerini gerçekleştirir.
-- API ile haberleşen **License Service** içerir.
+- ### ToDoList App
 
-### ToDoList App
+  - Lisans anahtarı sayfası ve uygulama ekranı içerir.
+  - Cihaza özel anahtar üretir ve bunu aktifleştirebilir.
+  - Lisanslanmayan uygulama 5 ten fazla yeni iş ekleyemez.
 
-- Lisans anahtarı sayfası ve uygulama ekranı içerir.
-- Cihaza özel anahtar üretir ve bunu aktifleştirebilir.
-- Lisanslanmayan uygulama 5 ten fazla yeni iş ekleyemez.
+- ### Setup Project
 
-### Setup Project
-
-- Gerekli dosyaları toplayarak birer adet **.msi** ve **.exe** setup dosyalarını oluşturur.
+  - Gerekli dosyaları toplayarak birer adet **.msi** ve **.exe** setup dosyalarını oluşturur.
