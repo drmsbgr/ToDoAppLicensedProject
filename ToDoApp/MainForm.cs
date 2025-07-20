@@ -1,4 +1,3 @@
-using LicenseLib;
 using ToDoApp.Entities;
 using ToDoApp.Helpers;
 
@@ -6,13 +5,25 @@ namespace ToDoApp;
 
 public partial class MainForm : Form
 {
-    public MainForm()
+    private readonly bool IsActivated;
+    public MainForm(bool isActivated)
     {
+        IsActivated = isActivated;
         InitializeComponent();
     }
 
     private void MainForm_Load(object sender, EventArgs e)
     {
+        if (IsActivated)
+        {
+            backButton.Hide();
+            Text = "Ana Sayfa - LÝSANSLI";
+        }
+        else
+        {
+            backButton.Show();
+            Text = "Ana Sayfa - LÝSANSSIZ";
+        }
         RefreshJobs();
     }
 
@@ -28,12 +39,12 @@ public partial class MainForm : Form
 
     private void createNewJobButton_Click(object sender, EventArgs e)
     {
-        if (!LicenseManager.IsActivated && JobManager.LoadJobs().Count ==5)
+        if (!IsActivated && JobManager.LoadJobs().Count >= 5)
         {
             MessageBox.Show("Ürün aktifleþtirilmediði için daha fazla iþ ekleyemezsiniz.", "Uyarý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return;
         }
-        
+
         if (string.IsNullOrEmpty(jobTitleTextBox.Text) || string.IsNullOrEmpty(jobDescTextBox.Text))
         {
             MessageBox.Show("Boþ alan býrakmayýnýz.", "Uyarý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -74,7 +85,7 @@ public partial class MainForm : Form
 
         var targetJob = jobs.Find(x => x.Id == data.Id);
 
-        if(targetJob is null) return;
+        if (targetJob is null) return;
 
         targetJob.Title = jobTitleTextBox.Text;
         targetJob.Desc = jobDescTextBox.Text;
@@ -116,5 +127,13 @@ public partial class MainForm : Form
         jobTitleTextBox.Text = data.Title;
         jobDescTextBox.Text = data.Desc;
         isJobDoneCheckbox.Checked = data.IsDone;
+    }
+
+    private void backButton_Click(object sender, EventArgs e)
+    {
+        this.Hide();
+        var form = new LicenseValidationForm();
+        form.ShowDialog();
+        this.Close();
     }
 }

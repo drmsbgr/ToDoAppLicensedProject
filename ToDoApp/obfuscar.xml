@@ -1,0 +1,20 @@
+<Obfuscator ExcludeTransparent="false">
+    <Var name="InPath" value="bin\Release\net9.0-windows\" />
+    <Var name="OutPath" value="obfuscated\" />
+
+    <Var name="KeepPublicApi" value="false" />
+    <Var name="HidePrivateApi" value="true" />
+    <Var name="RenameProperties" value="true" />
+    <Var name="RenameEvents" value="true" />
+    <Var name="HideStrings" value="true" />
+    <Var name="SuppressIldasm" value="true" />
+    <Var name="OptimizeMethods" value="true" />
+    <Var name="UseKoreanNames" value="true" />
+    <Var name="UseUnicodeNames" value="false" />
+
+    <!-- Ana uygulama -->
+    <Module file="$(InPath)ToDoApp.dll" />
+
+    <!-- Lisanslama kütüphanesi -->
+    <Module file="$(InPath)LicenseLib.dll" />
+</Obfuscator>

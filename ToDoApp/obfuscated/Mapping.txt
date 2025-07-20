@@ -1,0 +1,268 @@
+Renamed Types:
+
+[LicenseLib]LicenseLib.LicenseManager -> [LicenseLib]톺.톘
+{
+	[LicenseLib]LicenseLib.LicenseManager::IsLicenseValid[0]( ) -> 톺
+	[LicenseLib]LicenseLib.LicenseManager::TryActivateLicenseOnlineAsync[1]( [System.Runtime]System.String ) -> 톺
+	[LicenseLib]LicenseLib.LicenseManager::CreateLicenseFile[1]( [System.Runtime]System.String ) -> 톘
+	[LicenseLib]LicenseLib.LicenseManager::GetMachineId[0]( ) -> 톘
+	[LicenseLib]LicenseLib.LicenseManager::GetWmiProperty[3]( [System.Runtime]System.String, [System.Runtime]System.String, [System.Runtime]System.String ) -> 톺
+	[LicenseLib]LicenseLib.LicenseManager::IsLicenseKeyValid[1]( [System.Runtime]System.String ) -> 톤
+	[LicenseLib]LicenseLib.LicenseManager::ComputeSHA256[1]( [System.Runtime]System.String ) -> 톫
+	[LicenseLib]LicenseLib.LicenseManager::ComputeHMACSHA256[2]( [System.Runtime]System.String, [System.Runtime]System.String ) -> 톺
+	[LicenseLib]LicenseLib.LicenseManager::GenerateLicenseKey[1]( [System.Runtime]System.String ) -> 텵
+	[LicenseLib]LicenseLib.LicenseManager::Encrypt[1]( [System.Runtime]System.String ) -> 톅
+	[LicenseLib]LicenseLib.LicenseManager::Decrypt[1]( [System.Runtime]System.String ) -> 텾
+
+	[LicenseLib]LicenseLib.LicenseManager::.cctor[0]( ) skipped:  special name
+
+	System.String [LicenseLib]System.String LicenseLib.LicenseManager::LicenseFileName -> 톺
+	System.String [LicenseLib]System.String LicenseLib.LicenseManager::EncryptionKey -> 톘
+	System.String [LicenseLib]System.String LicenseLib.LicenseManager::SecretKey -> 톤
+}
+
+[LicenseLib]LicenseLib.LicenseService -> [LicenseLib]톺.톤
+{
+	[LicenseLib]LicenseLib.LicenseService::GetLicenseAsync[1]( [System.Runtime]System.String ) -> 톺
+	[LicenseLib]LicenseLib.LicenseService::ActivateLicenseAsync[2]( [System.Runtime]System.String, [System.Runtime]System.String ) -> 톺
+
+	[LicenseLib]LicenseLib.LicenseService::.cctor[0]( ) skipped:  special name
+
+	System.Net.Http.HttpClient [LicenseLib]System.Net.Http.HttpClient LicenseLib.LicenseService::httpClient -> 톺
+	System.String [LicenseLib]System.String LicenseLib.LicenseService::URL -> 톺
+}
+
+[LicenseLib]LicenseLib.LicenseHelper/<IsServerAvailable>d__1 -> [LicenseLib]톺.톺/톺
+{
+
+	[LicenseLib]LicenseLib.LicenseHelper/<IsServerAvailable>d__1::MoveNext[0]( ) skipped:  external base class or interface
+	[LicenseLib]LicenseLib.LicenseHelper/<IsServerAvailable>d__1::SetStateMachine[1]( [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine ) skipped:  external base class or interface
+
+	System.Int32 [LicenseLib]System.Int32 LicenseLib.LicenseHelper/<IsServerAvailable>d__1::<>1__state -> 톺
+	System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Boolean> [LicenseLib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Boolean> LicenseLib.LicenseHelper/<IsServerAvailable>d__1::<>t__builder -> 톺
+	System.String [LicenseLib]System.String LicenseLib.LicenseHelper/<IsServerAvailable>d__1::url -> 톺
+	System.Net.Http.HttpClient [LicenseLib]System.Net.Http.HttpClient LicenseLib.LicenseHelper/<IsServerAvailable>d__1::<client>5__2 -> 톺
+	System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage> [LicenseLib]System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage> LicenseLib.LicenseHelper/<IsServerAvailable>d__1::<>u__1 -> 톺
+}
+
+[LicenseLib]LicenseLib.LicenseManager/<TryActivateLicenseOnlineAsync>d__4 -> [LicenseLib]톺.톘/톺
+{
+
+	[LicenseLib]LicenseLib.LicenseManager/<TryActivateLicenseOnlineAsync>d__4::MoveNext[0]( ) skipped:  external base class or interface
+	[LicenseLib]LicenseLib.LicenseManager/<TryActivateLicenseOnlineAsync>d__4::SetStateMachine[1]( [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine ) skipped:  external base class or interface
+
+	System.Int32 [LicenseLib]System.Int32 LicenseLib.LicenseManager/<TryActivateLicenseOnlineAsync>d__4::<>1__state -> 톺
+	System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.ValueTuple`2<System.Boolean,System.String>> [LicenseLib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.ValueTuple`2<System.Boolean,System.String>> LicenseLib.LicenseManager/<TryActivateLicenseOnlineAsync>d__4::<>t__builder -> 톺
+	System.String [LicenseLib]System.String LicenseLib.LicenseManager/<TryActivateLicenseOnlineAsync>d__4::licenseKey -> 톺
+	System.Runtime.CompilerServices.TaskAwaiter`1<System.ValueTuple`2<System.Boolean,System.String>> [LicenseLib]System.Runtime.CompilerServices.TaskAwaiter`1<System.ValueTuple`2<System.Boolean,System.String>> LicenseLib.LicenseManager/<TryActivateLicenseOnlineAsync>d__4::<>u__1 -> 톺
+}
+
+[LicenseLib]LicenseLib.LicenseService/<ActivateLicenseAsync>d__3 -> [LicenseLib]톺.톤/톺
+{
+
+	[LicenseLib]LicenseLib.LicenseService/<ActivateLicenseAsync>d__3::MoveNext[0]( ) skipped:  external base class or interface
+	[LicenseLib]LicenseLib.LicenseService/<ActivateLicenseAsync>d__3::SetStateMachine[1]( [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine ) skipped:  external base class or interface
+
+	System.Int32 [LicenseLib]System.Int32 LicenseLib.LicenseService/<ActivateLicenseAsync>d__3::<>1__state -> 톺
+	System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.ValueTuple`2<System.Boolean,System.String>> [LicenseLib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.ValueTuple`2<System.Boolean,System.String>> LicenseLib.LicenseService/<ActivateLicenseAsync>d__3::<>t__builder -> 톺
+	System.String [LicenseLib]System.String LicenseLib.LicenseService/<ActivateLicenseAsync>d__3::machineId -> 톺
+	System.String [LicenseLib]System.String LicenseLib.LicenseService/<ActivateLicenseAsync>d__3::key -> 톘
+	System.Net.Http.HttpResponseMessage [LicenseLib]System.Net.Http.HttpResponseMessage LicenseLib.LicenseService/<ActivateLicenseAsync>d__3::<response>5__2 -> 톺
+	System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage> [LicenseLib]System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage> LicenseLib.LicenseService/<ActivateLicenseAsync>d__3::<>u__1 -> 톺
+	System.Runtime.CompilerServices.TaskAwaiter`1<System.String> [LicenseLib]System.Runtime.CompilerServices.TaskAwaiter`1<System.String> LicenseLib.LicenseService/<ActivateLicenseAsync>d__3::<>u__2 -> 톺
+}
+
+[LicenseLib]LicenseLib.LicenseService/<GetLicenseAsync>d__2 -> [LicenseLib]톺.톤/톘
+{
+
+	[LicenseLib]LicenseLib.LicenseService/<GetLicenseAsync>d__2::MoveNext[0]( ) skipped:  external base class or interface
+	[LicenseLib]LicenseLib.LicenseService/<GetLicenseAsync>d__2::SetStateMachine[1]( [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine ) skipped:  external base class or interface
+
+	System.Int32 [LicenseLib]System.Int32 LicenseLib.LicenseService/<GetLicenseAsync>d__2::<>1__state -> 톺
+	System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.ValueTuple`2<System.String,System.Boolean>> [LicenseLib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.ValueTuple`2<System.String,System.Boolean>> LicenseLib.LicenseService/<GetLicenseAsync>d__2::<>t__builder -> 톺
+	System.String [LicenseLib]System.String LicenseLib.LicenseService/<GetLicenseAsync>d__2::machineId -> 톺
+	System.Net.Http.HttpResponseMessage [LicenseLib]System.Net.Http.HttpResponseMessage LicenseLib.LicenseService/<GetLicenseAsync>d__2::<response>5__2 -> 톺
+	System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage> [LicenseLib]System.Runtime.CompilerServices.TaskAwaiter`1<System.Net.Http.HttpResponseMessage> LicenseLib.LicenseService/<GetLicenseAsync>d__2::<>u__1 -> 톺
+	System.Runtime.CompilerServices.TaskAwaiter`1<System.String> [LicenseLib]System.Runtime.CompilerServices.TaskAwaiter`1<System.String> LicenseLib.LicenseService/<GetLicenseAsync>d__2::<>u__2 -> 톺
+}
+
+[ToDoApp]ToDoApp.LicenseValidationForm -> [ToDoApp]톺.톘
+{
+	[ToDoApp]ToDoApp.LicenseValidationForm::validateButton_Click[2]( [System.Runtime]System.Object, [System.Runtime]System.EventArgs ) -> 톺
+	[ToDoApp]ToDoApp.LicenseValidationForm::ActivateApp[1]( [System.Runtime]System.String ) -> 톺
+	[ToDoApp]ToDoApp.LicenseValidationForm::continueFreeButton_Click[2]( [System.Runtime]System.Object, [System.Runtime]System.EventArgs ) -> 톘
+	[ToDoApp]ToDoApp.LicenseValidationForm::quitButton_Click[2]( [System.Runtime]System.Object, [System.Runtime]System.EventArgs ) -> 톤
+	[ToDoApp]ToDoApp.LicenseValidationForm::buyLicenseButton_Click[2]( [System.Runtime]System.Object, [System.Runtime]System.EventArgs ) -> 톫
+	[ToDoApp]ToDoApp.LicenseValidationForm::generateLicenseButton_Click[2]( [System.Runtime]System.Object, [System.Runtime]System.EventArgs ) -> 텵
+	[ToDoApp]ToDoApp.LicenseValidationForm::getMachineIdButton_Click[2]( [System.Runtime]System.Object, [System.Runtime]System.EventArgs ) -> 톅
+	[ToDoApp]ToDoApp.LicenseValidationForm::InitializeComponent[0]( ) -> 톺
+
+	[ToDoApp]ToDoApp.LicenseValidationForm::.ctor[0]( ) skipped:  special name
+	[ToDoApp]ToDoApp.LicenseValidationForm::Dispose[1]( [System.Runtime]System.Boolean ) skipped:  external base class or interface
+
+	System.ComponentModel.IContainer [ToDoApp]System.ComponentModel.IContainer ToDoApp.LicenseValidationForm::components -> 톺
+	System.Windows.Forms.MaskedTextBox [ToDoApp]System.Windows.Forms.MaskedTextBox ToDoApp.LicenseValidationForm::keyTextBox -> 톺
+	System.Windows.Forms.Button [ToDoApp]System.Windows.Forms.Button ToDoApp.LicenseValidationForm::validateButton -> 톺
+	System.Windows.Forms.Button [ToDoApp]System.Windows.Forms.Button ToDoApp.LicenseValidationForm::quitButton -> 톘
+	System.Windows.Forms.Button [ToDoApp]System.Windows.Forms.Button ToDoApp.LicenseValidationForm::continueFreeButton -> 톤
+	System.Windows.Forms.Label [ToDoApp]System.Windows.Forms.Label ToDoApp.LicenseValidationForm::label1 -> 톺
+	System.Windows.Forms.Button [ToDoApp]System.Windows.Forms.Button ToDoApp.LicenseValidationForm::buyLicenseButton -> 톫
+	System.Windows.Forms.Button [ToDoApp]System.Windows.Forms.Button ToDoApp.LicenseValidationForm::generateLicenseButton -> 텵
+	System.Windows.Forms.Button [ToDoApp]System.Windows.Forms.Button ToDoApp.LicenseValidationForm::getMachineIdButton -> 톅
+}
+
+[ToDoApp]ToDoApp.MainForm -> [ToDoApp]톺.톤
+{
+	[ToDoApp]ToDoApp.MainForm::MainForm_Load[2]( [System.Runtime]System.Object, [System.Runtime]System.EventArgs ) -> 톺
+	[ToDoApp]ToDoApp.MainForm::RefreshJobs[0]( ) -> 톺
+	[ToDoApp]ToDoApp.MainForm::createNewJobButton_Click[2]( [System.Runtime]System.Object, [System.Runtime]System.EventArgs ) -> 톘
+	[ToDoApp]ToDoApp.MainForm::overwriteJobButton_Click[2]( [System.Runtime]System.Object, [System.Runtime]System.EventArgs ) -> 톤
+	[ToDoApp]ToDoApp.MainForm::deleteSelectedButton_Click[2]( [System.Runtime]System.Object, [System.Runtime]System.EventArgs ) -> 톫
+	[ToDoApp]ToDoApp.MainForm::jobList_SelectedIndexChanged[2]( [System.Runtime]System.Object, [System.Runtime]System.EventArgs ) -> 텵
+	[ToDoApp]ToDoApp.MainForm::backButton_Click[2]( [System.Runtime]System.Object, [System.Runtime]System.EventArgs ) -> 톅
+	[ToDoApp]ToDoApp.MainForm::InitializeComponent[0]( ) -> 톘
+	[ToDoApp]ToDoApp.MainForm::<RefreshJobs>b__3_0[1]( [ToDoApp]ToDoApp.Entities.Job ) -> 톺
+
+	[ToDoApp]ToDoApp.MainForm::Dispose[1]( [System.Runtime]System.Boolean ) skipped:  external base class or interface
+	[ToDoApp]ToDoApp.MainForm::.ctor[1]( [System.Runtime]System.Boolean ) skipped:  special name
+
+	System.Boolean [ToDoApp]System.Boolean ToDoApp.MainForm::IsActivated -> 톺
+	System.ComponentModel.IContainer [ToDoApp]System.ComponentModel.IContainer ToDoApp.MainForm::components -> 톺
+	System.Windows.Forms.ListView [ToDoApp]System.Windows.Forms.ListView ToDoApp.MainForm::jobList -> 톺
+	System.Windows.Forms.ColumnHeader [ToDoApp]System.Windows.Forms.ColumnHeader ToDoApp.MainForm::columnJobName -> 톺
+	System.Windows.Forms.ColumnHeader [ToDoApp]System.Windows.Forms.ColumnHeader ToDoApp.MainForm::columnIsJobDone -> 톘
+	System.Windows.Forms.TextBox [ToDoApp]System.Windows.Forms.TextBox ToDoApp.MainForm::jobTitleTextBox -> 톺
+	System.Windows.Forms.TextBox [ToDoApp]System.Windows.Forms.TextBox ToDoApp.MainForm::jobDescTextBox -> 톘
+	System.Windows.Forms.CheckBox [ToDoApp]System.Windows.Forms.CheckBox ToDoApp.MainForm::isJobDoneCheckbox -> 톺
+	System.Windows.Forms.Label [ToDoApp]System.Windows.Forms.Label ToDoApp.MainForm::label1 -> 톺
+	System.Windows.Forms.Label [ToDoApp]System.Windows.Forms.Label ToDoApp.MainForm::label2 -> 톘
+	System.Windows.Forms.Button [ToDoApp]System.Windows.Forms.Button ToDoApp.MainForm::createNewJobButton -> 톺
+	System.Windows.Forms.Button [ToDoApp]System.Windows.Forms.Button ToDoApp.MainForm::overwriteJobButton -> 톘
+	System.Windows.Forms.Button [ToDoApp]System.Windows.Forms.Button ToDoApp.MainForm::deleteSelectedButton -> 톤
+	System.Windows.Forms.Button [ToDoApp]System.Windows.Forms.Button ToDoApp.MainForm::backButton -> 톫
+}
+
+[ToDoApp]ToDoApp.Helpers.JobManager -> [ToDoApp]톺.텵
+{
+	[ToDoApp]ToDoApp.Helpers.JobManager::LoadJobs[0]( ) -> 톺
+	[ToDoApp]ToDoApp.Helpers.JobManager::AddRecord[1]( [ToDoApp]ToDoApp.Entities.Job ) -> 톺
+	[ToDoApp]ToDoApp.Helpers.JobManager::RemoveRecord[1]( [System.Runtime]System.Int32 ) -> 톺
+	[ToDoApp]ToDoApp.Helpers.JobManager::Save[1]( [System.Collections]System.Collections.Generic.List`1<[ToDoApp]ToDoApp.Entities.Job> ) -> 톺
+	[ToDoApp]ToDoApp.Helpers.JobManager::CheckFileExists[0]( ) -> 톘
+	[ToDoApp]ToDoApp.Helpers.JobManager::CreateFile[0]( ) -> 톤
+	[ToDoApp]ToDoApp.Helpers.JobManager::SaveEncryptedJson[1]( [System.Collections]System.Collections.Generic.List`1<[ToDoApp]ToDoApp.Entities.Job> ) -> 톘
+	[ToDoApp]ToDoApp.Helpers.JobManager::LoadEncryptedJson[0]( ) -> 톫
+
+	[ToDoApp]ToDoApp.Helpers.JobManager::.cctor[0]( ) skipped:  special name
+
+	System.String [ToDoApp]System.String ToDoApp.Helpers.JobManager::JOBS_PATH -> 톺
+	System.Byte[] [ToDoApp]System.Byte[] ToDoApp.Helpers.JobManager::Key -> 톺
+	System.Byte[] [ToDoApp]System.Byte[] ToDoApp.Helpers.JobManager::IV -> 톘
+	System.Text.Json.JsonSerializerOptions [ToDoApp]System.Text.Json.JsonSerializerOptions ToDoApp.Helpers.JobManager::Options -> 톺
+}
+
+[ToDoApp]ToDoApp.Entities.Job -> [ToDoApp]톺.톅
+{
+	[ToDoApp]ToDoApp.Entities.Job::get_Id[0]( ) -> 톺
+	[ToDoApp]ToDoApp.Entities.Job::set_Id[1]( [System.Runtime]System.Int32 ) -> 톺
+	[ToDoApp]ToDoApp.Entities.Job::get_Title[0]( ) -> 톘
+	[ToDoApp]ToDoApp.Entities.Job::set_Title[1]( [System.Runtime]System.String ) -> 톺
+	[ToDoApp]ToDoApp.Entities.Job::get_Desc[0]( ) -> 톤
+	[ToDoApp]ToDoApp.Entities.Job::set_Desc[1]( [System.Runtime]System.String ) -> 톘
+	[ToDoApp]ToDoApp.Entities.Job::get_IsDone[0]( ) -> 톫
+	[ToDoApp]ToDoApp.Entities.Job::set_IsDone[1]( [System.Runtime]System.Boolean ) -> 톺
+	[ToDoApp]ToDoApp.Entities.Job::GetDoneState[0]( ) -> 텵
+
+	[ToDoApp]ToDoApp.Entities.Job::.ctor[0]( ) skipped:  special name
+
+	System.Int32 [ToDoApp]System.Int32 ToDoApp.Entities.Job::<Id>k__BackingField -> 톺
+	System.String [ToDoApp]System.String ToDoApp.Entities.Job::<Title>k__BackingField -> 톺
+	System.String [ToDoApp]System.String ToDoApp.Entities.Job::<Desc>k__BackingField -> 톘
+	System.Boolean [ToDoApp]System.Boolean ToDoApp.Entities.Job::<IsDone>k__BackingField -> 톺
+
+	System.Int32 [ToDoApp]System.Int32 ToDoApp.Entities.Job::Id -> dropped
+	System.String [ToDoApp]System.String ToDoApp.Entities.Job::Title -> dropped
+	System.String [ToDoApp]System.String ToDoApp.Entities.Job::Desc -> dropped
+	System.Boolean [ToDoApp]System.Boolean ToDoApp.Entities.Job::IsDone -> dropped
+}
+
+[ToDoApp]ToDoApp.LicenseValidationForm/<buyLicenseButton_Click>d__5 -> [ToDoApp]톺.톘/톺
+{
+
+	[ToDoApp]ToDoApp.LicenseValidationForm/<buyLicenseButton_Click>d__5::MoveNext[0]( ) skipped:  external base class or interface
+	[ToDoApp]ToDoApp.LicenseValidationForm/<buyLicenseButton_Click>d__5::SetStateMachine[1]( [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine ) skipped:  external base class or interface
+
+	System.Int32 [ToDoApp]System.Int32 ToDoApp.LicenseValidationForm/<buyLicenseButton_Click>d__5::<>1__state -> 톺
+	System.Runtime.CompilerServices.AsyncVoidMethodBuilder [ToDoApp]System.Runtime.CompilerServices.AsyncVoidMethodBuilder ToDoApp.LicenseValidationForm/<buyLicenseButton_Click>d__5::<>t__builder -> 톺
+	ToDoApp.LicenseValidationForm [ToDoApp]ToDoApp.LicenseValidationForm ToDoApp.LicenseValidationForm/<buyLicenseButton_Click>d__5::<>4__this -> 톺
+	System.Runtime.CompilerServices.TaskAwaiter`1<System.Boolean> [ToDoApp]System.Runtime.CompilerServices.TaskAwaiter`1<System.Boolean> ToDoApp.LicenseValidationForm/<buyLicenseButton_Click>d__5::<>u__1 -> 톺
+	System.Runtime.CompilerServices.TaskAwaiter`1<System.ValueTuple`2<System.String,System.Boolean>> [ToDoApp]System.Runtime.CompilerServices.TaskAwaiter`1<System.ValueTuple`2<System.String,System.Boolean>> ToDoApp.LicenseValidationForm/<buyLicenseButton_Click>d__5::<>u__2 -> 톺
+}
+
+[ToDoApp]ToDoApp.LicenseValidationForm/<validateButton_Click>d__1 -> [ToDoApp]톺.톘/톘
+{
+
+	[ToDoApp]ToDoApp.LicenseValidationForm/<validateButton_Click>d__1::MoveNext[0]( ) skipped:  external base class or interface
+	[ToDoApp]ToDoApp.LicenseValidationForm/<validateButton_Click>d__1::SetStateMachine[1]( [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine ) skipped:  external base class or interface
+
+	System.Int32 [ToDoApp]System.Int32 ToDoApp.LicenseValidationForm/<validateButton_Click>d__1::<>1__state -> 톺
+	System.Runtime.CompilerServices.AsyncVoidMethodBuilder [ToDoApp]System.Runtime.CompilerServices.AsyncVoidMethodBuilder ToDoApp.LicenseValidationForm/<validateButton_Click>d__1::<>t__builder -> 톺
+	ToDoApp.LicenseValidationForm [ToDoApp]ToDoApp.LicenseValidationForm ToDoApp.LicenseValidationForm/<validateButton_Click>d__1::<>4__this -> 톺
+	System.Runtime.CompilerServices.TaskAwaiter`1<System.Boolean> [ToDoApp]System.Runtime.CompilerServices.TaskAwaiter`1<System.Boolean> ToDoApp.LicenseValidationForm/<validateButton_Click>d__1::<>u__1 -> 톺
+	System.Runtime.CompilerServices.TaskAwaiter`1<System.ValueTuple`2<System.Boolean,System.String>> [ToDoApp]System.Runtime.CompilerServices.TaskAwaiter`1<System.ValueTuple`2<System.Boolean,System.String>> ToDoApp.LicenseValidationForm/<validateButton_Click>d__1::<>u__2 -> 톺
+}
+
+[ToDoApp]ToDoApp.MainForm/<>c__DisplayClass5_0 -> [ToDoApp]톺.톤/톺
+{
+	[ToDoApp]ToDoApp.MainForm/<>c__DisplayClass5_0::<overwriteJobButton_Click>b__0[1]( [ToDoApp]ToDoApp.Entities.Job ) -> 톺
+
+	[ToDoApp]ToDoApp.MainForm/<>c__DisplayClass5_0::.ctor[0]( ) skipped:  special name
+
+	ToDoApp.Entities.Job [ToDoApp]ToDoApp.Entities.Job ToDoApp.MainForm/<>c__DisplayClass5_0::data -> 톺
+}
+
+[ToDoApp]ToDoApp.Helpers.JobManager/<>c -> [ToDoApp]톺.텵/톺
+{
+	[ToDoApp]ToDoApp.Helpers.JobManager/<>c::<AddRecord>b__5_0[1]( [ToDoApp]ToDoApp.Entities.Job ) -> 톺
+
+	[ToDoApp]ToDoApp.Helpers.JobManager/<>c::.cctor[0]( ) skipped:  special name
+	[ToDoApp]ToDoApp.Helpers.JobManager/<>c::.ctor[0]( ) skipped:  special name
+
+	ToDoApp.Helpers.JobManager/<>c [ToDoApp]ToDoApp.Helpers.JobManager/<>c ToDoApp.Helpers.JobManager/<>c::<>9 -> 톺
+	System.Func`2<ToDoApp.Entities.Job,System.Int32> [ToDoApp]System.Func`2<ToDoApp.Entities.Job,System.Int32> ToDoApp.Helpers.JobManager/<>c::<>9__5_0 -> 톺
+}
+
+[ToDoApp]ToDoApp.Helpers.JobManager/<>c__DisplayClass6_0 -> [ToDoApp]톺.텵/톘
+{
+	[ToDoApp]ToDoApp.Helpers.JobManager/<>c__DisplayClass6_0::<RemoveRecord>b__0[1]( [ToDoApp]ToDoApp.Entities.Job ) -> 톺
+
+	[ToDoApp]ToDoApp.Helpers.JobManager/<>c__DisplayClass6_0::.ctor[0]( ) skipped:  special name
+
+	System.Int32 [ToDoApp]System.Int32 ToDoApp.Helpers.JobManager/<>c__DisplayClass6_0::id -> 톺
+}
+
+[LicenseLib]LicenseLib.LicenseHelper -> [LicenseLib]톺.톺
+{
+	[LicenseLib]LicenseLib.LicenseHelper::IsInternetAvailable[0]( ) -> 톺
+	[LicenseLib]LicenseLib.LicenseHelper::IsServerAvailable[1]( [System.Runtime]System.String ) -> 톺
+}
+
+[ToDoApp]ApplicationConfiguration -> [ToDoApp]톺.톺
+{
+	[ToDoApp]ApplicationConfiguration::Initialize[0]( ) -> 톺
+}
+
+[ToDoApp]ToDoApp.Program -> [ToDoApp]톺.톫
+{
+	[ToDoApp]ToDoApp.Program::Main[0]( ) -> 톺
+}
+
+Skipped Types:
+
+Renamed Resources:
+
+ToDoApp.LicenseValidationForm.resources -> 톺.톘.resources
+ToDoApp.MainForm.resources -> 톺.톤.resources
+
+Skipped Resources:
+

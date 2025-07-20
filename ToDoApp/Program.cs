@@ -15,7 +15,7 @@ static class Program
         ApplicationConfiguration.Initialize();
 
         if (LicenseManager.IsLicenseValid())
-            Application.Run(new MainForm());
+            Application.Run(new MainForm(true));
         else
             Application.Run(new LicenseValidationForm());
     }

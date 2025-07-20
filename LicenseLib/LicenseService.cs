@@ -3,7 +3,7 @@
 public static class LicenseService
 {
     private static readonly HttpClient httpClient = new();
-    private const string URL = "http://localhost:5243/api";
+    public static readonly string URL = "http://localhost:5243/api";
 
     public static async Task<(string, bool)> GetLicenseAsync(string machineId)
     {
@@ -25,7 +25,7 @@ public static class LicenseService
         }
     }
 
-    public static async Task<(bool, string)> ActivateLicenseAsync(string machineId, string key)
+    internal static async Task<(bool, string)> ActivateLicenseAsync(string machineId, string key)
     {
         try
         {

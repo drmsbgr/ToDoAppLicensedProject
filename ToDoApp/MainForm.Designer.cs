@@ -39,6 +39,7 @@ partial class MainForm
         createNewJobButton = new Button();
         overwriteJobButton = new Button();
         deleteSelectedButton = new Button();
+        backButton = new Button();
         SuspendLayout();
         // 
         // jobList
@@ -144,11 +145,23 @@ partial class MainForm
         deleteSelectedButton.UseVisualStyleBackColor = true;
         deleteSelectedButton.Click += deleteSelectedButton_Click;
         // 
+        // backButton
+        // 
+        backButton.Font = new Font("Segoe UI", 12F);
+        backButton.Location = new Point(777, 12);
+        backButton.Name = "backButton";
+        backButton.Size = new Size(95, 45);
+        backButton.TabIndex = 9;
+        backButton.Text = "Geri Dön";
+        backButton.UseVisualStyleBackColor = true;
+        backButton.Click += backButton_Click;
+        // 
         // MainForm
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(884, 561);
+        Controls.Add(backButton);
         Controls.Add(deleteSelectedButton);
         Controls.Add(overwriteJobButton);
         Controls.Add(createNewJobButton);
@@ -179,4 +192,5 @@ partial class MainForm
     private Button createNewJobButton;
     private Button overwriteJobButton;
     private Button deleteSelectedButton;
+    private Button backButton;
 }

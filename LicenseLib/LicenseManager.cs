@@ -6,11 +6,9 @@ namespace LicenseLib;
 
 public static class LicenseManager
 {
-    private const string LicenseFileName = "license.lic";
-    private const string EncryptionKey = "TODOLICENSENCRYP"; // 16 karakter (AES)
-    private const string SecretKey = "todolistappverysecretKEY!";
-
-    public static bool IsActivated => IsLicenseValid();
+    private static readonly string LicenseFileName = "license.lic";
+    private static readonly string EncryptionKey = "TODOLICENSENCRYP"; // 16 karakter (AES)
+    private static readonly string SecretKey = "todolistappverysecretKEY!";
 
     public static bool IsLicenseValid()
     {
@@ -33,7 +31,7 @@ public static class LicenseManager
         }
     }
 
-    public static async Task<(bool, string)> TryActivateLicenseAsync(string licenseKey)
+    public static async Task<(bool, string)> TryActivateLicenseOnlineAsync(string licenseKey)
     {
         if (!IsLicenseKeyValid(licenseKey))
             return (false, "Lisans anahtarı geçersiz!");
@@ -42,12 +40,16 @@ public static class LicenseManager
 
         if (!result)
             return (false, message);
+        CreateLicenseFile(licenseKey);
+        return (true, message);
+    }
 
+    public static void CreateLicenseFile(string licenseKey)
+    {
         string content = $"{licenseKey}|{GetMachineId()}";
         string encrypted = Encrypt(content);
 
         File.WriteAllText(LicenseFileName, encrypted);
-        return (true, message);
     }
 
     public static string GetMachineId()
@@ -145,24 +147,38 @@ public static class LicenseManager
         byte[] key = Encoding.UTF8.GetBytes(EncryptionKey);
         using Aes aes = Aes.Create();
         aes.Key = key;
-        aes.IV = key; // Demo amaçlı, gerçek uygulamada IV farklı olmalı
+        aes.GenerateIV(); // Rastgele IV üret
+        byte[] iv = aes.IV;
 
         ICryptoTransform encryptor = aes.CreateEncryptor();
         byte[] plainBytes = Encoding.UTF8.GetBytes(plainText);
-        byte[] encrypted = encryptor.TransformFinalBlock(plainBytes, 0, plainBytes.Length);
-        return Convert.ToBase64String(encrypted);
+        byte[] encryptedBytes = encryptor.TransformFinalBlock(plainBytes, 0, plainBytes.Length);
+
+        // IV + EncryptedData birleştirilip tek parça halinde base64'e çevrilir
+        byte[] result = new byte[iv.Length + encryptedBytes.Length];
+        Buffer.BlockCopy(iv, 0, result, 0, iv.Length);
+        Buffer.BlockCopy(encryptedBytes, 0, result, iv.Length, encryptedBytes.Length);
+
+        return Convert.ToBase64String(result);
     }
 
     private static string Decrypt(string encryptedText)
     {
         byte[] key = Encoding.UTF8.GetBytes(EncryptionKey);
+        byte[] fullCipher = Convert.FromBase64String(encryptedText);
+
         using Aes aes = Aes.Create();
         aes.Key = key;
-        aes.IV = key;
+
+        // IV ilk 16 byte olarak alınır
+        byte[] iv = new byte[16];
+        byte[] cipherBytes = new byte[fullCipher.Length - 16];
+        Buffer.BlockCopy(fullCipher, 0, iv, 0, 16);
+        Buffer.BlockCopy(fullCipher, 16, cipherBytes, 0, cipherBytes.Length);
+        aes.IV = iv;
 
         ICryptoTransform decryptor = aes.CreateDecryptor();
-        byte[] cipherBytes = Convert.FromBase64String(encryptedText);
-        byte[] decrypted = decryptor.TransformFinalBlock(cipherBytes, 0, cipherBytes.Length);
-        return Encoding.UTF8.GetString(decrypted);
+        byte[] decryptedBytes = decryptor.TransformFinalBlock(cipherBytes, 0, cipherBytes.Length);
+        return Encoding.UTF8.GetString(decryptedBytes);
     }
 }
