@@ -25,3 +25,15 @@ Bir masaüstü uygulamasına lisans kontrolü ekleyerek kullanımı kısıtlamak
 - ### Setup Project
 
   - Gerekli dosyaları toplayarak birer adet **.msi** ve **.exe** setup dosyalarını oluşturur.
+
+## Obfuscate ile kod karartma
+
+- Araç kurulumu
+  ```console
+  dotnet tool install --global Obfuscar.GlobalTool
+  ```
+- Ayar dosyası oluşturulur (.xml)
+- Hazırlanan ayar dosyası ile karartılan dll dosyalarını oluşturma
+  ```console
+  obfuscar.console .\obfuscar.xml
+  ```
